@@ -1,0 +1,101 @@
+<div>
+    <div id="app">
+        <section class="section">
+            <div class="section-header"><h1>广西医疗器械检测中心</h1></div>
+
+            <div class="left">
+                <div class="up">
+                    <div class="card">
+                        <div class="table-header"><h4>菜品</h4></div>
+                        <div class="table-menus">
+                            <tr>{% for m in menus %}</tr>
+                            <div class="card-primary">
+                                <div class="card-header">订单号：{{m.orderId}}</div>
+                                     <div class="card-body">
+                                        <div class="table">
+                                            <div class="table-body p-0">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped mb-0">
+                                                        <tbody>
+                                                          {% for o in m.orderDetails %}
+                                                          <tr class="table-text">
+                                                              <td>{{o.vegetableName}}</td>
+                                                              <td>{{o.vegetableNum}}</td>
+                                                              <td>${{o.vegetablePrice}}</td>
+                                                          </tr>
+                                                          {% endfor %}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div>
+                                        <div class="card-footer">
+                                            <div>份数：{{m.num}}份</div>
+                                            <div>金额：{{m.price}}元</div>
+                                        </div>
+                                     </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="down">
+                    <div class="card">
+                        <div class="table-header"><h4>其他类</h4></div>
+                        <div class="table-menus">
+                            <tr>{% for m in menus %}</tr>
+                            <div class="card-primary">
+                                <div class="card-header">订单号：{{m.orderId}}</div>
+                                     <div class="card-body">
+                                        <div class="table">
+                                            <div class="table-body p-0">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped mb-0">
+                                                        <tbody>
+                                                          {% for o in m.orderDetails %}
+                                                          <tr class="table-text">
+                                                              <td>{{o.vegetableName}}</td>
+                                                              <td>{{o.vegetableNum}}</td>
+                                                              <td>${{o.vegetablePrice}}</td>
+                                                          </tr>
+                                                          {% endfor %}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div>
+                                        <div class="card-footer">
+                                            <div>份数：{{m.num}}份</div>
+                                            <div>金额：{{m.price}}元</div>
+                                        </div>
+                                     </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="mes">
+                    <div class="mes_id">
+                        <div>姓名：<td class="mes">{{menus.0.username}}</td></div>
+                        <div>工号：<td class="mes">{{menus.0.userId}}</td></div>
+                        <div>订单数量：<td class="mes">{{menus.0.num}}</td></div>
+                        <div>余额：<td class="mes">{{menus.0.money}}</td></div>
+                    </div>
+                </div>
+                <div class="video_box">
+                    <div class="video">
+                    <video autoplay></video>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
